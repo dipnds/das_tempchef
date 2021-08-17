@@ -59,4 +59,13 @@ The Jupyter notebook ```das_tempchef/explore.ipynb``` contains the details of al
 
 8. Writing the final pipeline as .py files for packaging
 
-9. Saving environment variables and GitHub CI/CD actions in .yml files 
+9. Saving environment variables and GitHub CI/CD Actions in .yml files
+
+
+### Unmet requirements
+
+1. Docker image
+
+2. AWS Sagemaker
+
+3. CloudFormation or Terraform
