@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor as rf
 from sklearn.metrics import mean_squared_error
 import pandas as pd
+import pickle
 
 def train_test():
 
@@ -50,8 +51,9 @@ def train_test():
     mse = round(mean_squared_error(y_test, y_pred),3)
     rho = np.corrcoef(y_test, y_pred); rho = round(rho[0,1],3)
     
-    # plt.scatter(y_test, y_pred)
-    # plt.xlabel('Ground Truth MEDV'); plt.ylabel('Predicted MEDV')
+    log = {'groundtruth':y_test, 'prediction':y_pred}
+    with open('log_predictions.pkl', 'wb') as f:
+        pickle.dump(log, f)
     
     print('Test MSE : ', mse)
     print('Test RHO : ', rho)
